@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+}
+
+header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.feature {
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#gallery {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#photoList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#photoList img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+}
