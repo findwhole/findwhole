@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tui-image-editor/dist/tui-image-editor.css">
+    <script src="https://cdn.jsdelivr.net/npm/tui-image-editor/dist/tui-image-editor.js"></script>
+</head>
+<body>
+    <h2>Edit Your Photo</h2>
+    <input type="file" id="uploadImage" accept="image/*">
+    <div id="tui-image-editor-container"></div>
+
+    <script>
+        // Initialize the photo editor
+        document.getElementById('uploadImage').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageEditor = new tui.ImageEditor('#tui-image-editor-container', {
+                        includeUI: {
+                            loadImage: { path: e.target.result, name: 'Sample Image' },
+                            theme: {},
+                            menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'filter'],
+                            initMenu: 'filter',
+                            uiSize: { width: '1000px', height: '700px' },
+                        },
+                        cssMaxWidth: 700,
+                        cssMaxHeight: 500
+                    });
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
